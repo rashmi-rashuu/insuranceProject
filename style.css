@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css?family=DM+Serif+Display|Karla:400,700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --dark-violet:hsl(256, 26%, 20%);
+    --greyish-blue:hsl(216, 30%, 68%);
+    --very-dark-violet: hsl(270, 9%, 17%);
+    --dark-grayish-violet: hsl(273, 4%, 51%);
+    --very-light-grey: hsl(0, 0%, 98%);
+}
+
+body{
+    color: var(--dark-violet);
+    font-family: 'Karla',sans-serif;
+    margin: 0;
+}
+
+h1,h2,h3{
+    font-family: 'DM Serif Display', sans-serif;
+}
+
+h1,h2{
+    font-size: 4em;
+    letter-spacing: 2px;
+    line-height: 1;
+    position: relative;
+    margin: 0;
+    padding-top: 50px;
+}
+
+h3{
+    font-size: 2em;
+}
+
+p{
+    opacity: 0.8;
+    line-height: 1.5;
+}
+.line-top::before{
+    content: '';
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 150px;
+}
+
+.line-violet::before{
+    background-color: var(--dark-violet);
+}
+
+.btn{
+    padding: 15px 25px;
+    letter-spacing: 2px;
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btn-reverse{
+    color: var(--dark-violet);
+    border-color: var(--dark-violet);
+}
+
+.container{
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 1200px;
+}
+
+.align-start{
+    align-items: flex-start;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.flex > div {
+    flex: 1;
+}
+/* Nav styling*/
+nav{
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 100;
+}
+
+nav .hamburger{
+    display: none;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li{
+    margin-left: 30px;
+}
+nav li a{
+    color: var(--dark-grayish-violet);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+/* Header styling */
+header{
+    background-color: var(--dark-violet);
+    color: #fff;
+    padding: 50px 0;
+    position: relative;
+    margin-top: 80px;
+    margin-bottom: 250px;
+}
+
+.ivan-from-peru{
+    margin-bottom: -200px;
+    max-width: 100%;
+}
+/* Section styling */
+.bg-violet{
+    background-color: var(--dark-violet);
+    padding: 70px;
+    margin: 100px auto;
+}
+.bg-violet h2{
+    padding: 0;
+    color: #fff;
+    width: 70%;
+    font-size: 3em;
+}
+
+.title{
+    margin-top: 80px;
+}
+/* Footer styling*/
+footer{
+    background-color: var(--very-light-grey);
+    padding: 60px 0 30px;
+}
+
+footer h4{
+    text-transform: uppercase;
+    color: var(--dark-grayish-violet);
+}
+footer ul{
+    padding: 0;
+    list-style-type: none;
+}
+footer ul.flex li:not(:first-child){
+    margin-left: 15px;
+}
+footer li a{
+    color: var(--dark-violet);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+footer li{
+    margin-bottom: 10px;
+}
+
+.border-bottom{
+    border-bottom: 1px solid  var(--greyish-blue);
+    margin-bottom: 30px;
+}
+@media screen and (max-width: 768px){
+    body{
+        text-align: center;
+    }
+    .flex{
+        flex-direction: column;
+    }
+    nav{
+        padding: 20px 0;
+    }
+    nav .hamburger{
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        display: flex;
+    }
+    nav .hamburger .close{
+        display: none;
+    }
+    nav .hamburger.show .open{
+        display: none;
+    }
+    nav .hamburger.show .close{
+        display: block;
+    }
+    nav .flex{
+        flex-direction: row;
+    }
+    nav .img-wrapper{
+        text-align: left;
+    }
+    nav ul{
+        display: none;
+    }
+    nav ul.show{
+        background-color: var(--very-dark-violet);
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        padding-top: 30px;
+        margin: 0;
+        top: 70px;
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 70px);
+        z-index: 100;
+    }
+    nav ul li{
+        margin: 30px 0;
+    }
+    
+    nav ul a{
+        color: white;
+    }
+    .btn-reverse{
+        border-color: #fff;
+        color: #fff;
+    }
+    header{
+        padding-top: 0;
+        margin-bottom: 50px;
+    }
+    .ivan-from-peru{
+        display: inline-block;
+        margin-bottom: 0px;
+        margin-left: -20px;
+        max-width: calc(100% + 40px);
+    }
+    .line-top::before{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .reverse-moblie{
+        flex-direction: column-reverse;
+    }
+    .bg-violet h2{
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    footer ul.flex{
+        flex-direction: row;
+    }
+   
+}
